@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scouts Monopoly Kamp 2025</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+  </head>
+
+  <body class="monopoly-theme">
+    <header>
+      <div class="container header-container">
+        <h1 class="titel">
+          <i class="fas fa-dice"></i> Monopoly Kamp 2025 <i class="fas fa-chess-pawn"></i>
+        </h1>
+        <nav class="tabs">
+          <button class="tab-btn active" data-tab="info">Kamp Info</button>
+          <button class="tab-btn" data-tab="spelregels">Spelregels</button>
+          <button class="tab-btn" data-tab="team">Team</button>
+          <button class="tab-btn" data-tab="contact">Contact</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <section id="info" class="tab-content active">
+        <h2>Welkom op het Monopoly Kamp!</h2>
+        <p>
+          Dit kamp staat helemaal in het teken van Monopoly: spelplezier,
+          strategie en samenwerken. Bereid je voor op een onvergetelijk avontuur met
+          pionnen, huizen en straten!
+        </p>
+        <ul>
+          <li><strong>Datum:</strong> 15 t/m 22 juli 2025</li>
+          <li><strong>Locatie:</strong> Boskamp De Pion, Kasteelstraat 10</li>
+          <li><strong>Meenemen:</strong> Speelklaar humeur, comfortabele kledij, zonnecrème</li>
+        </ul>
+        <img
+          src="src/assets/monopoly-board.jpg"
+          alt="Monopoly bord"
+          class="kamp-image"
+        />
+      </section>
+
+      <section id="spelregels" class="tab-content hidden">
+        <h2>Spelregels en opdrachten</h2>
+        <p>
+          Tijdens het kamp spelen we ons eigen Monopoly spel, met aangepaste regels
+          en extra opdrachten. Zorg dat je de regels goed kent!
+        </p>
+        <ol>
+          <li>Elke dag start met een dobbelsteen-worp.</li>
+          <li>Verzamel pionnen en huizen door opdrachten te voltooien.</li>
+          <li>Pas op voor de gevangenis en onverwachte boetes!</li>
+          <li>Teams werken samen om straten te veroveren.</li>
+        </ol>
+      </section>
+
+      <section id="team" class="tab-content hidden">
+        <h2>Ons kampteam</h2>
+        <div class="team-cards">
+          <div class="team-card">
+            <img src="src/assets/leider1.jpg" alt="Simon Beelen" />
+            <h3>Simon Beelen</h3>
+            <p>Hoofdleider & organisator</p>
+          </div>
+          <div class="team-card">
+            <img src="src/assets/leider2.jpg" alt="Lisa Janssens" />
+            <h3>Lisa Janssens</h3>
+            <p>Spelbegeleider</p>
+          </div>
+          <div class="team-card">
+            <img src="src/assets/leider3.jpg" alt="Tom Verhoeven" />
+            <h3>Tom Verhoeven</h3>
+            <p>Veiligheid & logistiek</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="tab-content hidden">
+        <h2>Contact</h2>
+        <p>
+          Heb je vragen? Neem contact op via e-mail of telefoon.
+        </p>
+        <ul>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:kamp@scouts.be">kamp@scouts.be</a></li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+32123456789">+32 12 34 56 789</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-container">
+        <p>
+          &copy; 2025 Scouts Monopoly Kamp | Gemaakt door Simon Beelen
+          <i class="fas fa-chess-board"></i>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Tab switching script
+      const tabs = document.querySelectorAll(".tab-btn");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active class from all tabs and contents
+          tabs.forEach((t) => t.classList.remove("active"));
+          contents.forEach((c) => c.classList.add("hidden"));
+          // Add active to clicked tab and show corresponding content
+          tab.classList.add("active");
+          const target = tab.getAttribute("data-tab");
+          document.getElementById(target).classList.remove("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
